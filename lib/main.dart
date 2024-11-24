@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_api_sample/controller/home_screen_controller.dart';
-import 'package:news_api_sample/view/home_screen/home_screen.dart';
+import 'package:news_api_sample/controller/livestream_controller.dart';
+import 'package:news_api_sample/view/Bottomnavbar/bottomnavbar.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,11 +17,14 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => HomeScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => LivestreamController(),
         )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: Bottomnavbar(),
       ),
     );
   }
