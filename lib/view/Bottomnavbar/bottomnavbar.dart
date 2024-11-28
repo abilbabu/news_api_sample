@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:news_api_sample/utils/Color_Constants.dart';
 import 'package:news_api_sample/view/BookMarkScreen/bookmark_screen.dart';
 import 'package:news_api_sample/view/LivestreamScreen/livestream_screen.dart';
-import 'package:news_api_sample/view/ProfileScreen/profile_screen.dart';
+import 'package:news_api_sample/view/categoryScreen/category_screen.dart';
 import 'package:news_api_sample/view/home_screen/home_screen.dart';
+import 'package:news_api_sample/view/searchScreen/searchScreen.dart';
 
 class Bottomnavbar extends StatefulWidget {
   const Bottomnavbar({super.key});
@@ -16,23 +17,23 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   int selectedTab = 0;
   List screen = [
     HomeScreen(),
-    LivestreamScreen(),
+    CategoryScreen(),
     BookmarkScreen(),
-    ProfileScreen()
+    LivestreamScreen()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60)),
         backgroundColor: ColorConstants.PrimaryColor,
         onPressed: () {
-          // Navigator.push(
-          //     context,
-          //     MaterialPageRoute(
-          //       builder: (context) => CreateRecipeScreen(),
-          //     ));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SearchScreen(),
+              ));
         },
         child: Icon(
           Icons.search,
@@ -55,11 +56,12 @@ class _BottomnavbarState extends State<Bottomnavbar> {
               label: "For You",
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.live_tv_sharp), label: "Live Stream"),
+                icon: Icon(Icons.auto_awesome_mosaic_outlined),
+                label: "News Category"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.bookmark_outline), label: "Saved"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline), label: "Profile"),
+                icon: Icon(Icons.live_tv_sharp), label: "Live Stream"),
           ]),
     );
   }

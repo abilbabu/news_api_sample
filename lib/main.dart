@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:news_api_sample/controller/category_screen_controller.dart';
 import 'package:news_api_sample/controller/home_screen_controller.dart';
 import 'package:news_api_sample/controller/livestream_controller.dart';
+import 'package:news_api_sample/controller/search_screen_controller.dart';
 import 'package:news_api_sample/view/Bottomnavbar/bottomnavbar.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +22,13 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => LivestreamController(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CategoryScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SearchScreenController(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

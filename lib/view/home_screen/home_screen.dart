@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:news_api_sample/controller/home_screen_controller.dart';
 import 'package:news_api_sample/utils/Color_Constants.dart';
-import 'package:news_api_sample/view/news_screen/news_screen.dart';
+import 'package:news_api_sample/view/Global%20Widget/news_screen/news_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -28,7 +28,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [Icon(Icons.more_vert)],
+        actions: [
+          Icon(Icons.notifications),
+          SizedBox(
+            width: 10,
+          ),
+          Icon(Icons.person_4_outlined),
+          SizedBox(
+            width: 10,
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
