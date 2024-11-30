@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:news_api_sample/controller/home_screen_controller.dart';
 import 'package:news_api_sample/utils/Color_Constants.dart';
 import 'package:news_api_sample/view/Global%20Widget/news_screen/news_screen.dart';
+import 'package:news_api_sample/view/Profile_screen/profile_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -33,7 +34,15 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             width: 10,
           ),
-          Icon(Icons.person_4_outlined),
+          InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfileScreen(),
+                    ));
+              },
+              child: Icon(Icons.person_4_outlined)),
           SizedBox(
             width: 10,
           ),
